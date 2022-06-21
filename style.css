@@ -1,0 +1,263 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a:link {
+  text-decoration: none !important;
+}
+
+a:visited {
+  color: black;
+}
+
+/*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
+html, body, p, ol, ul, li, dl, dt, dd, blockquote, figure, fieldset, legend, textarea, pre, iframe, hr, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+ul {
+  list-style: none;
+}
+
+button, input, select {
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+img, video {
+  height: auto;
+  max-width: 100%;
+}
+
+iframe {
+  border: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td, th {
+  padding: 0;
+}
+
+@font-face {
+  font-family: "Roboto_Light";
+  src: url("../fonts/Roboto/Roboto-Light.ttf");
+}
+@font-face {
+  font-family: "Roboto_Regular";
+  src: url("../fonts/Roboto/Roboto-Regular.ttf");
+}
+@font-face {
+  font-family: "Roboto_Bold";
+  src: url("../fonts/Roboto/Roboto-Bold.ttf");
+}
+@font-face {
+  font-family: "Shrikhand";
+  src: url("../fonts/Shrikhand/Shrikhand-Regular.ttf");
+}
+header {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  position: relative;
+  height: 50px;
+}
+header #PageTitle {
+  padding: 10px;
+}
+header i {
+  position: absolute;
+  top: 25px;
+  left: 15px;
+}
+header img {
+  height: 100%;
+}
+
+#UserLocation {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background: rgb(240, 240, 240);
+  background: linear-gradient(0deg, rgb(240, 240, 240) 88%, rgb(163, 163, 163) 100%);
+}
+#UserLocation i {
+  padding-top: 15px;
+}
+#UserLocation p {
+  padding: 15px;
+  font-family: Roboto_Regular;
+}
+
+.btn, #ExploreRestaurants button {
+  background: rgb(147, 86, 220);
+  background: linear-gradient(0deg, rgb(147, 86, 220) 0%, rgb(255, 121, 218) 100%);
+  border-radius: 25px;
+  color: white;
+  font-family: Roboto_Regular;
+  border: none;
+  box-shadow: 0px 2px 5px 2px silver;
+  padding: 15px;
+}
+
+#ExploreRestaurants {
+  background-color: rgb(250, 250, 250);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  font-family: Roboto_Regular;
+}
+#ExploreRestaurants h1 {
+  font-weight: bold;
+  font-size: 24px;
+  padding: 15px 50px 0px;
+}
+#ExploreRestaurants p {
+  padding: 15px 50px;
+}
+#ExploreRestaurants span {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+#ExploreRestaurants button {
+  width: 200px;
+  margin-bottom: 50px;
+  margin-top: 25px;
+}
+
+#Fonctionnement {
+  display: flex;
+  flex-direction: column;
+}
+#Fonctionnement .Title {
+  padding: 15px;
+  font-family: Roboto_Bold;
+  font-size: 28px;
+}
+#Fonctionnement .FonctionnementCard {
+  background-color: rgb(250, 250, 250);
+  box-shadow: 0px 5px 5px 2px rgb(220, 220, 220);
+  border-radius: 25px;
+  display: flex;
+  flex-direction: row;
+  padding: 25px;
+  margin: 15px;
+  margin-left: 40px;
+  position: relative;
+}
+#Fonctionnement .FonctionnementCard .Decoration {
+  background-color: rgb(147, 86, 220);
+  border-radius: 25px;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  color: white;
+  position: absolute;
+  top: 20px;
+  left: -10px;
+  font-family: Roboto_Regular;
+  padding-top: 5px;
+  font-size: 13px;
+}
+#Fonctionnement .FonctionnementCard i {
+  color: gray;
+  padding-left: 10px;
+}
+#Fonctionnement .FonctionnementCard h3 {
+  padding-left: 15px;
+  font-family: Roboto_Bold;
+}
+
+#Restaurants {
+  background-color: rgba(0, 0, 0, 0.05);
+  padding: 25px;
+}
+#Restaurants h1 {
+  font-family: "Roboto_Bold";
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+#Restaurants .RestaurantCard {
+  border-radius: 25px;
+  background-color: white;
+  height: 220px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 25px;
+  position: relative;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+}
+#Restaurants .RestaurantCard img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 25px 25px 0px 0px;
+}
+#Restaurants .RestaurantCard .RestaurantDescription {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Roboto_Regular";
+  padding: 15px;
+}
+#Restaurants .RestaurantCard .RestaurantDescription .RestaurantDescriptionText h2 {
+  font-family: "Roboto_Bold";
+}
+#Restaurants .RestaurantCard .RestaurantDescription .RestaurantDescriptionText p {
+  font-size: 16px;
+}
+#Restaurants .RestaurantCard .RestaurantDescription i {
+  color: gray;
+}
+
+footer {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  font-family: "Roboto_Regular";
+  font-size: 13px;
+}
+footer img {
+  width: 100px;
+  margin-bottom: 15px;
+}
+footer .FooterItemWithIcon {
+  color: white;
+  display: flex;
+  flex-direction: row;
+}
+footer .FooterItemWithIcon i {
+  margin-right: 8px;
+  width: 20px;
+  height: 20px;
+}
+footer .FooterItem {
+  color: white;
+  font-family: Roboto_Light;
+  margin-bottom: 5px;
+}
+
+/*# sourceMappingURL=style.css.map */

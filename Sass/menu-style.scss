@@ -1,0 +1,79 @@
+* {
+    font-family: Roboto_Regular;
+}
+
+#Restaurant--PageContent {
+    
+    #Restaurant--Image {
+        position: absolute;
+        top:50px;
+        z-index: -5;
+        img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+    }
+
+    #RestaurantSections {
+        border-radius: 25px 25px 0px 0px;
+        background-color: rgb(244,244,244);
+        margin-top: 200px;
+
+        #RestaurantSections--header {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            h1 {
+                padding: 25px;
+                padding-left: 15px;
+                font-family: Shrikhand;
+                font-size: 24px;
+            }
+
+            i {
+                padding-top: 40px;
+                padding-right: 30px;
+            }
+        }
+
+        .Menu--Items {
+            
+            .Menu--Type {
+                padding-left: 15px;
+
+                h3 {
+                    margin-bottom: 2px;
+                }
+                .HeaderMenuSeparator {
+                    background-color: #99E2D0;
+                    width: 50px;
+                    height: 2px;
+                }
+            }
+      
+
+            .Menu--Item {
+                height: 75px;
+                display: flex;
+                flex-direction: column;
+                background-color: white;
+                justify-content: center;
+                border-radius: 15px;
+                margin: 15px;
+                box-shadow: 0px 0px 10px 0px silver;
+                padding-left: 15px;
+
+                h4 {
+                    font-weight: bold;
+                    padding-bottom: 2px;
+                }
+                p {
+                    padding-top: 2px;
+                }
+            }
+        }
+        
+    }
+}
