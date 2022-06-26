@@ -1,4 +1,4 @@
-$cd-btn: #011c37;
+/*$cd-btn: #011c37;
 $cd-txt: #15DEA5;
 .btn {
     background: $cd-btn;
@@ -13,9 +13,7 @@ $cd-txt: #15DEA5;
     &:hover {
         transform: scale(1.15);
     }
-}
-
-
+}*/
 
 
 $cd-txt: #6300a0;
@@ -25,6 +23,8 @@ $cd-danger: #b20a37;
 
 .container {
   background-color: rgb(237, 246, 247);
+  width: 80%;
+  margin: auto;
 }
 
 .form {
@@ -47,6 +47,43 @@ $cd-danger: #b20a37;
                 border: 2px solid $cd-danger;
                 color: $cd-txt--invalid;
             }
+        }
+    }
+}
+
+$cd-btn:white;
+$cd-btn-start: rgba(1, 28, 55, 0);
+$cd-btn-end: rgba(1, 28, 55, 1);
+.btn {
+    background-color: $cd-btn-start;
+    border: 4px solid $cd-btn;
+    border-radius: 10rem;
+    cursor: pointer;
+    font-size: 3rem;
+    overflow: hidden;
+    padding: 1.85rem 3rem;
+    position: relative;
+    transition: all 400ms;
+
+    &:hover {
+        transform: scale(1.10);
+        transition: transform 500ms, background-color 300ms 150ms;
+        background-color: $cd-btn-end;
+        color: white;
+    }
+}
+
+
+.Transition--Container {
+    background-color: silver;
+    padding: 15px;
+
+    .Transition--Square{
+        width: 25px;
+        height: 25px;
+        background-color: white;
+        &:hover {     
+            transition: transform 1000ms ease-in-out;
         }
     }
 }
