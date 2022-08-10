@@ -74,6 +74,37 @@ td, th {
   font-family: "Shrikhand";
   src: url("../fonts/Shrikhand/Shrikhand-Regular.ttf");
 }
+.spinner {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+}
+.spinner div {
+  box-sizing: border-box;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 4px solid transparent;
+  border-top-color: blueviolet;
+  border-radius: 50%;
+  animation: spinnerOne 2s linear infinite;
+}
+.spinner div:nth-child(2) {
+  border: 4px solid transparent;
+  border-bottom-color: blueviolet;
+}
+
+@keyframes spinnerOne {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 header {
   display: flex;
   flex-wrap: wrap;
@@ -109,15 +140,30 @@ header img {
   font-family: Roboto_Regular;
 }
 
-.btn, #ExploreRestaurants button {
-  background: rgb(147, 86, 220);
-  background: linear-gradient(0deg, rgb(147, 86, 220) 0%, rgb(255, 121, 218) 100%);
+.btn, #ExploreRestaurants span button {
+  background: #9356DC;
+  background-color: linear-gradient(0deg, rgb(147, 86, 220) 0%, rgb(255, 121, 218) 100%);
   border-radius: 25px;
   color: white;
   font-family: Roboto_Regular;
   border: none;
-  box-shadow: 0px 2px 5px 2px silver;
+  box-shadow: 0px 2px 5px 1px silver;
   padding: 15px;
+  transition: 0.3s background-color;
+  position: relative;
+}
+.btn:hover::after, #ExploreRestaurants span button:hover::after {
+  background: linear-gradient(0deg, #ae80e5 0%, #fface8 100%);
+  transition: 0.3s opacity;
+  opacity: 1;
+}
+.btn::after, #ExploreRestaurants span button::after {
+  content: "Test";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
 }
 
 #ExploreRestaurants {
@@ -141,7 +187,7 @@ header img {
   flex-direction: row;
   justify-content: center;
 }
-#ExploreRestaurants button {
+#ExploreRestaurants span button {
   width: 200px;
   margin-bottom: 50px;
   margin-top: 25px;
@@ -150,15 +196,16 @@ header img {
 #Fonctionnement {
   display: flex;
   flex-direction: column;
+  margin-bottom: 25px;
 }
 #Fonctionnement .Title {
-  padding: 15px;
+  padding: 25px;
   font-family: Roboto_Bold;
   font-size: 28px;
 }
 #Fonctionnement .FonctionnementCard {
   background-color: rgb(250, 250, 250);
-  box-shadow: 0px 5px 5px 2px rgb(220, 220, 220);
+  box-shadow: 0px 2px 5px 1px rgb(220, 220, 220);
   border-radius: 25px;
   display: flex;
   flex-direction: row;
@@ -166,9 +213,18 @@ header img {
   margin: 15px;
   margin-left: 40px;
   position: relative;
+  transition: background-color 500ms;
+  transition: color 300ms;
+}
+#Fonctionnement .FonctionnementCard:hover {
+  background-color: #e4d5f6;
+  transition: 0.3s background-color;
+}
+#Fonctionnement .FonctionnementCard:hover i {
+  color: #9356DC;
 }
 #Fonctionnement .FonctionnementCard .Decoration {
-  background-color: rgb(147, 86, 220);
+  background-color: #9356DC;
   border-radius: 25px;
   width: 25px;
   height: 25px;
@@ -184,6 +240,7 @@ header img {
 #Fonctionnement .FonctionnementCard i {
   color: gray;
   padding-left: 10px;
+  transition: color 300ms;
 }
 #Fonctionnement .FonctionnementCard h3 {
   padding-left: 15px;

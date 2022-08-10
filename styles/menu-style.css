@@ -29,9 +29,26 @@
   font-family: Shrikhand;
   font-size: 24px;
 }
-#Restaurant--PageContent #RestaurantSections #RestaurantSections--header i {
-  padding-top: 40px;
-  padding-right: 30px;
+#Restaurant--PageContent #RestaurantSections #RestaurantSections--header .HeartContainer {
+  position: relative;
+  width: 50px;
+  padding-top: 25px;
+}
+#Restaurant--PageContent #RestaurantSections #RestaurantSections--header .HeartContainer img {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+}
+#Restaurant--PageContent #RestaurantSections #RestaurantSections--header .HeartContainer .Red {
+  z-index: 5;
+}
+#Restaurant--PageContent #RestaurantSections #RestaurantSections--header .HeartContainer .Transparent {
+  transition: opacity 500ms;
+  opacity: 1;
+  z-index: 10;
+}
+#Restaurant--PageContent #RestaurantSections #RestaurantSections--header .HeartContainer:hover .Transparent {
+  opacity: 0;
 }
 #Restaurant--PageContent #RestaurantSections .Menu--Items .Menu--Type {
   padding-left: 15px;
@@ -47,20 +64,70 @@
 #Restaurant--PageContent #RestaurantSections .Menu--Items .Menu--Item {
   height: 75px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   background-color: white;
-  justify-content: center;
+  justify-content: space-between;
   border-radius: 15px;
   margin: 15px;
   box-shadow: 0px 0px 10px 0px silver;
   padding-left: 15px;
+  overflow: hidden;
+}
+#Restaurant--PageContent #RestaurantSections .Menu--Items .Menu--Item a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: width 330ms;
+  width: 100%;
 }
 #Restaurant--PageContent #RestaurantSections .Menu--Items .Menu--Item h4 {
   font-weight: bold;
   padding-bottom: 2px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
-#Restaurant--PageContent #RestaurantSections .Menu--Items .Menu--Item p {
+#Restaurant--PageContent #RestaurantSections .Menu--Items .Menu--Item .Description--Price {
+  display: flex;
+  justify-content: space-between;
+}
+#Restaurant--PageContent #RestaurantSections .Menu--Items .Menu--Item .Description--Price .Description {
   padding-top: 2px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+#Restaurant--PageContent #RestaurantSections .Menu--Items .Menu--Item .Description--Price .Price {
+  font-weight: 600;
+  padding-right: 15px;
+}
+#Restaurant--PageContent #RestaurantSections .Menu--Items .Menu--Item:hover a {
+  width: calc(100% - 65px);
+}
+#Restaurant--PageContent #RestaurantSections .Menu--Items .Menu--Item:hover .Menu--Check {
+  width: 65px;
+}
+#Restaurant--PageContent #RestaurantSections .Menu--Items .Menu--Item:hover .Menu--Check i {
+  transform: rotate(1turn);
+}
+#Restaurant--PageContent #RestaurantSections .Menu--Items .Menu--Item .Menu--Check {
+  width: 0px;
+  height: 100%;
+  background-color: #99E2D0;
+  color: #99E2D0;
+  transition: width 330ms;
+  padding-top: 25px;
+}
+#Restaurant--PageContent #RestaurantSections .Menu--Items .Menu--Item .Menu--Check div {
+  background-color: white;
+  border-radius: 50px;
+  width: 24px;
+  height: 24px;
+  padding: 3px;
+  margin-left: 20px;
+}
+#Restaurant--PageContent #RestaurantSections .Menu--Items .Menu--Item .Menu--Check div i {
+  transition: transform 330ms ease-in-out;
 }
 
 /*# sourceMappingURL=menu-style.css.map */

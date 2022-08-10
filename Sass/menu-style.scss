@@ -2,6 +2,10 @@
     font-family: Roboto_Regular;
 }
 
+$Color_Purple:  #9356DC;
+$Color_Pink:    #FF79DA;
+$Color_Green:   #99E2D0;
+
 #Restaurant--PageContent {
     
     #Restaurant--Image {
@@ -32,10 +36,30 @@
                 font-family: Shrikhand;
                 font-size: 24px;
             }
+            .HeartContainer {
+                position: relative;
+                width: 50px;
+                padding-top: 25px;
 
-            i {
-                padding-top: 40px;
-                padding-right: 30px;
+                img {
+                    width: 30px;
+                    height: 30px;
+                    position: absolute;
+                }
+                .Red {
+                    z-index: 5;
+                }
+                .Transparent {
+                    transition: opacity 500ms;
+                    opacity: 1;
+                    z-index: 10;
+                }
+
+                &:hover {
+                    .Transparent {
+                        opacity: 0;
+                    }
+                }
             }
         }
 
@@ -48,7 +72,7 @@
                     margin-bottom: 2px;
                 }
                 .HeaderMenuSeparator {
-                    background-color: #99E2D0;
+                    background-color: $Color_Green;
                     width: 50px;
                     height: 2px;
                 }
@@ -58,23 +82,80 @@
             .Menu--Item {
                 height: 75px;
                 display: flex;
-                flex-direction: column;
+                flex-direction: row;
                 background-color: white;
-                justify-content: center;
+                justify-content: space-between;
                 border-radius: 15px;
                 margin: 15px;
                 box-shadow: 0px 0px 10px 0px silver;
                 padding-left: 15px;
+                overflow: hidden;
 
+                a {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    transition: width 330ms;
+                    width: 100%;
+                }
                 h4 {
                     font-weight: bold;
                     padding-bottom: 2px;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    white-space: nowrap;
                 }
-                p {
-                    padding-top: 2px;
+                .Description--Price {
+                    display: flex;
+                    justify-content: space-between;
+
+                    .Description {
+                        padding-top: 2px;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        white-space: nowrap;
+                    }
+                    .Price {
+                        font-weight: 600;
+                        padding-right: 15px;
+                    }
+                }
+
+                &:hover {
+                    a {
+                        width: calc(100% - 65px);
+                    }
+                    .Menu--Check {
+                        width: 65px;
+
+                        i {
+                            transform: rotate(1turn);
+                        }
+                    }
+                }
+
+                .Menu--Check {
+                    width: 0px;
+                    height: 100%;
+                    background-color: $Color_Green;
+                    color: $Color_Green;
+                    transition: width 330ms;
+                    padding-top: 25px;
+
+                    div {
+                        background-color: white;
+                        border-radius: 50px;
+                        width: 24px;
+                        height: 24px;
+                        padding: 3px;
+                        margin-left: 20px;
+
+                        i {
+                            transition: transform 330ms ease-in-out;
+                        }
+                    }
                 }
             }
         }
-        
     }
 }

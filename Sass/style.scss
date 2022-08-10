@@ -27,7 +27,40 @@ a:visited {
     font-family: "Shrikhand";
     src: url("../fonts/Shrikhand/Shrikhand-Regular.ttf")
 }
+
+$Color_Purple:  #9356DC;
+$Color_Pink:    #FF79DA;
+$Color_Green:   #99E2D0;
  
+
+// LOADING SPINNER
+.spinner {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+
+    div {
+        box-sizing: border-box;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border: 4px solid transparent;
+        border-top-color: blueviolet;
+        border-radius: 50%;
+        animation: spinnerOne 2s linear infinite;
+    }
+
+    div:nth-child(2) {
+        border: 4px solid transparent;
+        border-bottom-color: blueviolet;
+    }
+}
+@keyframes spinnerOne {
+    0% {transform: rotate(0deg);}
+    50% {transform: rotate(180deg);}
+    100% {transform: rotate(360deg);}
+}
+
 // HEADER
 header {
     display: flex;
@@ -69,15 +102,34 @@ header {
 
 // STANDARD BUTTON DEFINITIONS
 .btn {
-    background: rgb(147,86,220);
+    background: $Color_Purple;
     //background: lighten(rgb(147,86,220), 50%);
-    background: linear-gradient(0deg, rgba(147,86,220,1) 0%, rgba(255,121,218,1) 100%);
+    background-color: linear-gradient(0deg, rgba(147,86,220,1) 0%, rgba(255,121,218,1) 100%);
     border-radius: 25px;
     color:white;
     font-family: Roboto_Regular;
     border: none;
-    box-shadow: 0px 2px 5px 2px silver;
+    box-shadow: 0px 2px 5px 1px silver;
     padding: 15px;
+    transition: 0.3s background-color;
+    position: relative;
+
+    // REPRENDRE LES PROPRIETES DU BUTTON
+    &:hover {
+        &::after {
+            background: linear-gradient(0deg, lighten(rgba(147,86,220,1), 10%) 0%, lighten(rgba(255,121,218,1), 10%) 100%);
+            transition: 0.3s opacity;
+            opacity: 1;
+        }
+    }
+
+    &::after {
+        content: "Test";
+        display: block;
+        position: absolute;
+        top: 0; left: 0;
+        opacity: 0;
+    }
 }
 
 // EXPLORE RESTAURANTS CARD
@@ -103,13 +155,13 @@ header {
         display: flex;
         flex-direction: row;
         justify-content: center;
-    }
 
-    button {
-        @extend .btn;
-        width: 200px;
-        margin-bottom: 50px;
-        margin-top: 25px;
+        button {
+            @extend .btn;
+            width: 200px;
+            margin-bottom: 50px;
+            margin-top: 25px;
+        }
     }
 }
 
@@ -117,16 +169,17 @@ header {
 #Fonctionnement {
     display: flex;
     flex-direction: column;
+    margin-bottom: 25px;
 
     .Title {   
-        padding: 15px;
+        padding: 25px;
         font-family: Roboto_Bold;
         font-size:28px;
     }
 
     .FonctionnementCard {
         background-color: rgb(250,250,250);
-        box-shadow: 0px 5px 5px 2px rgb(220,220,220);
+        box-shadow: 0px 2px 5px 1px rgb(220,220,220);
         border-radius: 25px;
         display: flex;
         flex-direction: row;
@@ -134,9 +187,20 @@ header {
         margin: 15px;
         margin-left: 40px;
         position: relative;
+        transition: background-color 500ms;
+        transition: color 300ms;
+
+        &:hover {
+            background-color: lighten($Color_Purple, 30%);
+            transition: 0.3s background-color;
+
+            i {
+                color: $Color_Purple;
+            }
+        }
 
         .Decoration {
-            background-color: rgba(147,86,220,1);
+            background-color: $Color_Purple;
             border-radius: 25px;
             width: 25px;
             height: 25px;
@@ -153,6 +217,7 @@ header {
         i {
             color: gray;
             padding-left: 10px;
+            transition: color 300ms;
         }
 
         h3 {
