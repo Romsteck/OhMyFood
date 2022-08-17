@@ -87,7 +87,8 @@ td, th {
   border: 4px solid transparent;
   border-top-color: blueviolet;
   border-radius: 50%;
-  animation: spinnerOne 2s linear infinite;
+  animation: spinnerOne 2s linear;
+  display: none;
 }
 .spinner div:nth-child(2) {
   border: 4px solid transparent;
@@ -97,12 +98,11 @@ td, th {
 @keyframes spinnerOne {
   0% {
     transform: rotate(0deg);
-  }
-  50% {
-    transform: rotate(180deg);
+    display: block;
   }
   100% {
     transform: rotate(360deg);
+    display: block;
   }
 }
 header {

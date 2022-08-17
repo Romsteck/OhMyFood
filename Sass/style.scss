@@ -47,7 +47,8 @@ $Color_Green:   #99E2D0;
         border: 4px solid transparent;
         border-top-color: blueviolet;
         border-radius: 50%;
-        animation: spinnerOne 2s linear infinite;
+        animation: spinnerOne 2s linear;
+        display: none;
     }
 
     div:nth-child(2) {
@@ -56,9 +57,14 @@ $Color_Green:   #99E2D0;
     }
 }
 @keyframes spinnerOne {
-    0% {transform: rotate(0deg);}
-    50% {transform: rotate(180deg);}
-    100% {transform: rotate(360deg);}
+    0% {
+        transform: rotate(0deg);
+        display: block;
+    }
+    100% {
+        transform: rotate(360deg);
+        display: block;
+    }
 }
 
 // HEADER
