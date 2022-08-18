@@ -109,7 +109,6 @@ header {
 // STANDARD BUTTON DEFINITIONS
 .btn {
     background: $Color_Purple;
-    //background: lighten(rgb(147,86,220), 50%);
     background-color: linear-gradient(0deg, rgba(147,86,220,1) 0%, rgba(255,121,218,1) 100%);
     border-radius: 25px;
     color:white;
@@ -129,13 +128,13 @@ header {
         }
     }
 
-    &::after {
+    /*&::after {
         content: "Test";
         display: block;
         position: absolute;
         top: 0; left: 0;
         opacity: 0;
-    }
+    }*/
 }
 
 // EXPLORE RESTAURANTS CARD
@@ -157,7 +156,7 @@ header {
         padding: 15px 50px;
     }
 
-    span {
+    a {
         display: flex;
         flex-direction: row;
         justify-content: center;
