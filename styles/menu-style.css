@@ -50,6 +50,9 @@
 #Restaurant--PageContent #RestaurantSections #RestaurantSections--header .HeartContainer:hover .Transparent {
   opacity: 0;
 }
+#Restaurant--PageContent #RestaurantSections .Menu--Items {
+  margin-bottom: 40px;
+}
 #Restaurant--PageContent #RestaurantSections .Menu--Items .Menu--Type {
   padding-left: 15px;
 }
@@ -69,9 +72,29 @@
   justify-content: space-between;
   border-radius: 15px;
   margin: 15px;
-  box-shadow: 0px 0px 10px 0px silver;
+  box-shadow: 0px 2px 15px 0px silver;
   padding-left: 15px;
   overflow: hidden;
+  opacity: 0;
+}
+#Restaurant--PageContent #RestaurantSections .Menu--Items .Menu--Item:nth-child(1) {
+  animation: MenuAppear 150ms ease-in-out forwards;
+}
+#Restaurant--PageContent #RestaurantSections .Menu--Items .Menu--Item:nth-child(2) {
+  animation: MenuAppear 300ms ease-in-out forwards;
+}
+#Restaurant--PageContent #RestaurantSections .Menu--Items .Menu--Item:nth-child(3) {
+  animation: MenuAppear 450ms ease-in-out forwards;
+}
+@keyframes MenuAppear {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
 }
 #Restaurant--PageContent #RestaurantSections .Menu--Items .Menu--Item a {
   display: flex;
