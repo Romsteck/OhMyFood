@@ -1,10 +1,47 @@
 * {
     font-family: Roboto_Regular;
 }
-
+a:link{
+    text-decoration: none!important;
+}
 $Color_Purple:  #9356DC;
 $Color_Pink:    #FF79DA;
 $Color_Green:   #99E2D0;
+
+.OrderButton {
+    background: linear-gradient(0deg, rgba(147,86,220,1) 0%, rgba(255,121,218,1) 100%);
+    border-radius: 25px;
+    color:white;
+    font-family: Roboto_Regular;
+    font-size: 15px;
+    box-shadow: 0px 2px 5px 1px silver;
+    position: relative;
+    padding-top:16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+
+    &:hover {
+        &::after {
+            background: linear-gradient(0deg, lighten(rgba(147,86,220,1), 10%) 0%, lighten(rgba(255,121,218,1), 10%) 100%);
+            transition: 0.3s opacity;
+            opacity: 1;
+        }
+    }
+
+    &::after {
+        width: 100%;
+        height: 100%;
+        @extend .OrderButton;
+        content: "Commander";
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+    }
+}
+
 
 #Restaurant--PageContent {
     
@@ -36,28 +73,34 @@ $Color_Green:   #99E2D0;
                 font-family: Shrikhand;
                 font-size: 24px;
             }
-            .HeartContainer {
+            .Heart--Container {
                 position: relative;
                 width: 50px;
                 padding-top: 25px;
 
                 img {
+                    position: absolute;
                     width: 30px;
                     height: 30px;
-                    position: absolute;
                 }
-                .Red {
-                    z-index: 5;
-                }
-                .Transparent {
-                    transition: opacity 500ms;
+                .Normal--Heart {
+                    z-index: 1;
                     opacity: 1;
-                    z-index: 10;
+                    transition: opacity 500ms;
                 }
-
+                .Gradient--Heart {
+                    padding-left: 1px;
+                    padding-right: 1px;
+                    transition: opacity 500ms;
+                    opacity: 0;
+                    z-index: 2;
+                }
                 &:hover {
-                    .Transparent {
+                    .Normal--Heart {
                         opacity: 0;
+                    }
+                    .Gradient--Heart {
+                        opacity: 1;
                     }
                 }
             }
@@ -94,7 +137,7 @@ $Color_Green:   #99E2D0;
 
                 @for $i from 1 through 3 {
                     &:nth-child(#{$i}) {
-                        animation : MenuAppear 150ms * $i ease-in-out forwards;
+                        animation : MenuAppear 200ms * $i ease-in-out forwards;
                     }
                 }
 
@@ -109,7 +152,7 @@ $Color_Green:   #99E2D0;
                     }
                 }
 
-                a {
+                .MenuItem--Container{
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
@@ -140,7 +183,7 @@ $Color_Green:   #99E2D0;
                 }
 
                 &:hover {
-                    a {
+                    .MenuItem--Container {
                         width: calc(100% - 65px);
                     }
 
@@ -176,5 +219,17 @@ $Color_Green:   #99E2D0;
                 }
             }
         }
+    }
+}
+
+.Order--Button {
+    @extend .OrderButton;
+    width: 140px;
+    height: 50px;
+    margin: 50px auto;
+    margin-bottom: 100px;
+    
+    &:visited {
+        color:white
     }
 }

@@ -31,7 +31,7 @@ a:visited {
 $Color_Purple:  #9356DC;
 $Color_Pink:    #FF79DA;
 $Color_Green:   #99E2D0;
- 
+
 
 // LOADING SPINNER
 .spinner {
@@ -59,11 +59,9 @@ $Color_Green:   #99E2D0;
 @keyframes spinnerOne {
     0% {
         transform: rotate(0deg);
-        display: block;
     }
     100% {
         transform: rotate(360deg);
-        display: block;
     }
 }
 
@@ -91,6 +89,8 @@ header {
     }
 }
 #UserLocation {
+    font-weight: 600;
+    font-size: 16px;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -108,18 +108,16 @@ header {
 
 // STANDARD BUTTON DEFINITIONS
 .btn {
-    background: $Color_Purple;
-    background-color: linear-gradient(0deg, rgba(147,86,220,1) 0%, rgba(255,121,218,1) 100%);
+    background: linear-gradient(0deg, rgba(147,86,220,1) 0%, rgba(255,121,218,1) 100%);
     border-radius: 25px;
     color:white;
     font-family: Roboto_Regular;
-    border: none;
+    font-size: 15px;
     box-shadow: 0px 2px 5px 1px silver;
-    padding: 15px;
-    transition: 0.3s background-color;
     position: relative;
+    padding-top:16px;
 
-    // REPRENDRE LES PROPRIETES DU BUTTON
+
     &:hover {
         &::after {
             background: linear-gradient(0deg, lighten(rgba(147,86,220,1), 10%) 0%, lighten(rgba(255,121,218,1), 10%) 100%);
@@ -128,13 +126,17 @@ header {
         }
     }
 
-    /*&::after {
-        content: "Test";
+    &::after {
+        width: 100%;
+        height: 100%;
+        @extend .btn;
+        content: "Explorer nos restaurants";
         display: block;
         position: absolute;
-        top: 0; left: 0;
+        top: 0;
+        left: 0;
         opacity: 0;
-    }*/
+    }
 }
 
 // EXPLORE RESTAURANTS CARD
@@ -145,39 +147,35 @@ header {
     justify-content: center;
     text-align: center;
     font-family: Roboto_Regular;
+    height: 275px;
 
     h1 {
         font-weight: bold;
         font-size: 24px;
         padding: 15px 50px 0px;
     }
-
     p {
         padding: 15px 50px;
     }
-
     a {
+        @extend .btn;
+        width: 220px;
+        height: 50px;
+        margin: 20px auto;
         display: flex;
         flex-direction: row;
         justify-content: center;
-
-        button {
-            @extend .btn;
-            width: 200px;
-            margin-bottom: 50px;
-            margin-top: 25px;
-        }
     }
 }
 
-// SECTION FONCTIONNEMENT
+// 'FONCTIONNEMENT' SECTION
 #Fonctionnement {
     display: flex;
     flex-direction: column;
-    margin-bottom: 25px;
+    margin-bottom: 50px;
 
     .Title {   
-        padding: 25px;
+        padding: 30px;
         font-family: Roboto_Bold;
         font-size:28px;
     }
@@ -190,10 +188,12 @@ header {
         flex-direction: row;
         padding: 25px;
         margin: 15px;
-        margin-left: 40px;
+        margin-left: 30px;
+        margin-right: 20px;
         position: relative;
         transition: background-color 500ms;
         transition: color 300ms;
+        cursor: pointer;
 
         &:hover {
             background-color: lighten($Color_Purple, 30%);
@@ -222,6 +222,7 @@ header {
         i {
             color: gray;
             padding-left: 10px;
+            padding-top: 1px;
             transition: color 300ms;
         }
 
@@ -232,7 +233,7 @@ header {
     }
 }
 
-// SECTION RESTAURANTS
+// 'RESTAURANTS' SECTION
 #Restaurants {
     background-color: rgba(0,0,0,0.05);
     padding: 25px;
@@ -266,6 +267,44 @@ header {
             font-family: "Roboto_Regular";
             padding:15px;
 
+            .Heart--Container {
+                position: relative;
+                padding-top: 5px;
+                margin-right: 5px;
+                width: 28px;
+                height: 28px;
+            
+                img {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    object-fit:fill;
+                    border-radius: 0px;
+                }
+            
+                .Normal--Heart {
+                    z-index: 1;
+                    opacity: 1;
+                    transition: opacity 500ms;
+                }
+                .Gradient--Heart {
+                    padding-left: 1px;
+                    padding-right: 1px;
+                    transition: opacity 500ms;
+                    opacity: 0;
+                    z-index: 2;
+                }
+            
+                &:hover {
+                    .Normal--Heart {
+                        opacity: 0;
+                    }
+                    .Gradient--Heart {
+                        opacity: 1;
+                    }
+                }
+            }
+
             .RestaurantDescriptionText {
 
                 h2 {
@@ -285,7 +324,7 @@ header {
 }
 
 // FOOTER
-footer {
+footer ul {
     background-color: rgba(0,0,0,0.8);
     color: white;
     display: flex;
@@ -298,23 +337,22 @@ footer {
         width: 100px;
         margin-bottom: 15px;
     }
-
-    .FooterItemWithIcon {
+    .FooterItem {
         color: white;
+        font-family: Roboto_Light;
+        margin-bottom: 10px;
+    }
+    .FooterItemWithIcon {
+        font-weight: 600;
         display: flex;
         flex-direction: row;
+        margin-bottom: 5px;
 
         i {
-            margin-right: 8px;
+            margin-right: 5px;
+            margin-top: 1px;
             width: 20px;
             height: 20px;
         }
     }
-
-    .FooterItem {
-        color: white;
-        font-family: Roboto_Light;
-        margin-bottom: 5px;
-    }
-
 }
