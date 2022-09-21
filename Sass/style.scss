@@ -250,6 +250,10 @@ header {
     background-color: rgba(0,0,0,0.05);
     padding: 25px;
 
+    a:visited {
+        color: black;
+    }
+
     h1 {
         font-family: "Roboto_Bold";
         font-size: 20px;
@@ -344,6 +348,10 @@ footer ul {
     padding: 25px;
     font-family: "Roboto_Regular";
     font-size: 13px;
+
+    a:visited {
+        color: white;
+    }
 
     img {
         width: 100px;

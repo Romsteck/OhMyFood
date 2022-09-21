@@ -264,6 +264,9 @@ header img {
   background-color: rgba(0, 0, 0, 0.05);
   padding: 25px;
 }
+#Restaurants a:visited {
+  color: black;
+}
 #Restaurants h1 {
   font-family: "Roboto_Bold";
   font-size: 20px;
@@ -341,6 +344,9 @@ footer ul {
   padding: 25px;
   font-family: "Roboto_Regular";
   font-size: 13px;
+}
+footer ul a:visited {
+  color: white;
 }
 footer ul img {
   width: 100px;
