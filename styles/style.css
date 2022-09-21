@@ -9,10 +9,6 @@ a:link {
   text-decoration: none !important;
 }
 
-a:visited {
-  color: black;
-}
-
 /*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
 html, body, p, ol, ul, li, dl, dt, dd, blockquote, figure, fieldset, legend, textarea, pre, iframe, hr, h1, h2, h3, h4, h5, h6 {
   margin: 0;
@@ -74,10 +70,21 @@ td, th {
   font-family: "Shrikhand";
   src: url("../fonts/Shrikhand/Shrikhand-Regular.ttf");
 }
+.Spinner--Container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  z-index: 20;
+}
+
 .spinner {
   width: 50px;
   height: 50px;
   position: absolute;
+  left: calc((100% - 50px) / 2);
+  top: calc((100% - 50px) / 2);
+  animation: spinnerContainer 2s;
 }
 .spinner div {
   box-sizing: border-box;
@@ -87,14 +94,18 @@ td, th {
   border: 4px solid transparent;
   border-top-color: blueviolet;
   border-radius: 50%;
-  animation: spinnerOne 2s linear;
-  display: none;
+  animation: spinnerOne 2s cubic-bezier(0.39, 0.79, 0.81, 0.96);
 }
 .spinner div:nth-child(2) {
   border: 4px solid transparent;
   border-bottom-color: blueviolet;
 }
 
+/* ************** REPAIR THIS SHIT  *********  @keyframes spinnerContainer {
+    100% {
+        transform: z-index(-20);
+    }
+}************************** */
 @keyframes spinnerOne {
   0% {
     transform: rotate(0deg);
