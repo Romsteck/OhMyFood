@@ -135,7 +135,7 @@ $Color_Green:   #99E2D0;
                 overflow: hidden;
                 opacity: 0;
 
-                @for $i from 1 through 3 {
+                @for $i from 1 through 4 {
                     &:nth-child(#{$i}) {
                         animation : MenuAppear 200ms * $i ease-in-out forwards;
                     }
