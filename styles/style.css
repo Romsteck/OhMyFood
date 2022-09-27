@@ -184,7 +184,8 @@ header img {
   justify-content: center;
   text-align: center;
   font-family: Roboto_Regular;
-  height: 275px;
+  padding-bottom: 25px;
+  padding-top: 25px;
 }
 #ExploreRestaurants h1 {
   font-weight: bold;
@@ -368,6 +369,36 @@ footer ul .FooterItemWithIcon i {
   margin-top: 1px;
   width: 20px;
   height: 20px;
+}
+
+@media screen and (min-width: 1210px) {
+  #Fonctionnement {
+    display: flex;
+    flex-direction: row;
+    padding-top: 25px;
+    margin-bottom: 25px;
+  }
+}
+@media screen and (min-width: 770px) {
+  #ExploreRestaurants {
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 30px;
+    padding-right: 30px;
+    padding-left: 40px;
+  }
+  #ExploreRestaurants a {
+    margin: 25px;
+  }
+  #ExploreRestaurants div {
+    text-align: start;
+  }
+  #ExploreRestaurants div h1 {
+    padding-left: 0px;
+  }
+  #ExploreRestaurants div p {
+    padding-left: 0px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
