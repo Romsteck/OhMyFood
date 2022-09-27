@@ -34,6 +34,10 @@ a:link {
   opacity: 0;
 }
 
+header a i {
+  color: black;
+}
+
 #Restaurant--PageContent #Restaurant--Image {
   position: absolute;
   top: 50px;
