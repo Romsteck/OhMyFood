@@ -106,130 +106,153 @@ $Color_Green:   #99E2D0;
             }
         }
 
-        .Menu--Items {
-            margin-bottom: 40px;
-            
-            .Menu--Type {
-                padding-left: 15px;
+        #MenuCards {
+            .Menu--Items {
+                margin-bottom: 40px;
+                
+                .Menu--Type {
+                    padding-left: 15px;
 
-                h3 {
-                    margin-bottom: 2px;
-                }
-                .HeaderMenuSeparator {
-                    background-color: $Color_Green;
-                    width: 50px;
-                    height: 2px;
-                }
-            }
-      
-            .Menu--Item {
-                height: 75px;
-                display: flex;
-                flex-direction: row;
-                background-color: white;
-                justify-content: space-between;
-                border-radius: 15px;
-                margin: 15px;
-                box-shadow: 0px 2px 15px 0px silver;
-                padding-left: 15px;
-                overflow: hidden;
-                opacity: 0;
-
-                @for $i from 1 through 4 {
-                    &:nth-child(#{$i}) {
-                        animation : MenuAppear 200ms * $i ease-in-out forwards;
+                    h3 {
+                        margin-bottom: 2px;
+                    }
+                    .HeaderMenuSeparator {
+                        background-color: $Color_Green;
+                        width: 50px;
+                        height: 2px;
                     }
                 }
-
-                @keyframes MenuAppear {
-                    0% {
-                        opacity: 0;
-                        transform: translateY(15px);
-                    }
-                    100% {
-                        opacity: 1;
-                        transform: translateY(0px);
-                    }
-                }
-
-                .MenuItem--Container{
+        
+                .Menu--Item {
+                    height: 75px;
                     display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    transition: width 330ms;
-                    width: 100%;
-                }
-                h4 {
-                    font-weight: bold;
-                    padding-bottom: 2px;
-                    text-overflow: ellipsis;
-                    overflow: hidden;
-                    white-space: nowrap;
-                }
-                .Description--Price {
-                    display: flex;
+                    flex-direction: row;
+                    background-color: white;
                     justify-content: space-between;
+                    border-radius: 15px;
+                    margin: 15px;
+                    box-shadow: 0px 2px 15px 0px silver;
+                    padding-left: 15px;
+                    overflow: hidden;
+                    opacity: 0;
 
-                    .Description {
-                        padding-top: 2px;
+                    @for $i from 1 through 4 {
+                        &:nth-child(#{$i}) {
+                            animation : MenuAppear 200ms * $i ease-in-out forwards;
+                        }
+                    }
+
+                    @keyframes MenuAppear {
+                        0% {
+                            opacity: 0;
+                            transform: translateY(15px);
+                        }
+                        100% {
+                            opacity: 1;
+                            transform: translateY(0px);
+                        }
+                    }
+
+                    .MenuItem--Container{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        transition: width 330ms;
+                        width: 100%;
+                    }
+                    h4 {
+                        font-weight: bold;
+                        padding-bottom: 2px;
                         text-overflow: ellipsis;
                         overflow: hidden;
                         white-space: nowrap;
                     }
-                    .Price {
-                        font-weight: 600;
-                        padding-right: 15px;
-                    }
-                }
+                    .Description--Price {
+                        display: flex;
+                        justify-content: space-between;
 
-                &:hover {
-                    .MenuItem--Container {
-                        width: calc(100% - 65px);
+                        .Description {
+                            padding-top: 2px;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                            white-space: nowrap;
+                        }
+                        .Price {
+                            font-weight: 600;
+                            padding-right: 15px;
+                        }
+                    }
+
+                    &:hover {
+                        .MenuItem--Container {
+                            width: calc(100% - 65px);
+                        }
+
+                        .Menu--Check {
+                            width: 65px;
+
+                            i {
+                                transform: rotate(1turn);
+                            }
+                        }
                     }
 
                     .Menu--Check {
-                        width: 65px;
+                        width: 0px;
+                        height: 100%;
+                        background-color: $Color_Green;
+                        color: $Color_Green;
+                        transition: width 330ms;
+                        padding-top: 25px;
 
-                        i {
-                            transform: rotate(1turn);
+                        div {
+                            background-color: white;
+                            border-radius: 50px;
+                            width: 28px;
+                            height: 28px;
+                            padding: 5px 4px;
+                            margin-left: 20px;
+
+                            i {
+                                transition: transform 330ms ease-in-out;
+                            }
                         }
                     }
                 }
-
-                .Menu--Check {
-                    width: 0px;
-                    height: 100%;
-                    background-color: $Color_Green;
-                    color: $Color_Green;
-                    transition: width 330ms;
-                    padding-top: 25px;
-
-                    div {
-                        background-color: white;
-                        border-radius: 50px;
-                        width: 24px;
-                        height: 24px;
-                        padding: 3px;
-                        margin-left: 20px;
-
-                        i {
-                            transition: transform 330ms ease-in-out;
-                        }
-                    }
+            }
+            .Order--Button {
+                @extend .OrderButton;
+                width: 140px;
+                height: 50px;
+                margin: 50px auto;
+                margin-bottom: 100px;
+                
+                &:visited {
+                    color:white
                 }
             }
         }
     }
 }
 
-.Order--Button {
-    @extend .OrderButton;
-    width: 140px;
-    height: 50px;
-    margin: 50px auto;
-    margin-bottom: 100px;
-    
-    &:visited {
-        color:white
+
+@media screen and (min-width : 770px) {
+    #MenuCards {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        .Menu--Items {
+            width: 50%;
+        }
+    }
+}
+
+@media screen and (min-width : 1600px) {
+    #MenuCards {
+
+        .Menu--Items {
+            width: 25%;
+        }
     }
 }
