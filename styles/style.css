@@ -207,7 +207,7 @@ header img {
 #Fonctionnement {
   display: flex;
   flex-direction: column;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 #Fonctionnement .Title {
   padding: 30px;
@@ -271,7 +271,8 @@ header img {
 #Restaurants h1 {
   font-family: "Roboto_Bold";
   font-size: 20px;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
+  padding-left: 10px;
 }
 #Restaurants .RestaurantCard {
   border-radius: 25px;
@@ -371,14 +372,6 @@ footer ul .FooterItemWithIcon i {
   height: 20px;
 }
 
-@media screen and (min-width: 1210px) {
-  #Fonctionnement {
-    display: flex;
-    flex-direction: row;
-    padding-top: 25px;
-    margin-bottom: 25px;
-  }
-}
 @media screen and (min-width: 770px) {
   #ExploreRestaurants {
     flex-direction: row;
@@ -398,6 +391,39 @@ footer ul .FooterItemWithIcon i {
   }
   #ExploreRestaurants div p {
     padding-left: 0px;
+  }
+  #Restaurants {
+    padding: 20px 15px;
+  }
+  #Restaurants h1 {
+    padding-left: 25px;
+    margin-bottom: 10px;
+  }
+  #RestaurantsGallery {
+    display: flex;
+    flex-direction: row;
+  }
+  #RestaurantsGallery .Group {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+  #RestaurantsGallery .Group .RestaurantCard {
+    margin: 15px;
+  }
+}
+@media screen and (min-width: 1210px) {
+  #Fonctionnement {
+    display: flex;
+    flex-direction: row;
+    padding-top: 25px;
+    margin-bottom: 25px;
+  }
+  #RestaurantsGallery .Group {
+    flex-direction: row;
+  }
+  #RestaurantsGallery .Group .RestaurantCard {
+    width: 50%;
   }
 }
 
