@@ -76,6 +76,7 @@ td, th {
   height: 100%;
   background-color: rgba(255, 255, 255, 0.8);
   z-index: 20;
+  animation: spinnerContainer 2s ease-out forwards;
 }
 
 .spinner {
@@ -84,7 +85,6 @@ td, th {
   position: absolute;
   left: calc((100% - 50px) / 2);
   top: calc((100% - 50px) / 2);
-  animation: spinnerContainer 2s;
 }
 .spinner div {
   box-sizing: border-box;
@@ -101,11 +101,14 @@ td, th {
   border-bottom-color: blueviolet;
 }
 
-/* ************** REPAIR THIS SHIT  *********  @keyframes spinnerContainer {
-    100% {
-        transform: z-index(-20);
-    }
-}************************** */
+@keyframes spinnerContainer {
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 @keyframes spinnerOne {
   0% {
     transform: rotate(0deg);
