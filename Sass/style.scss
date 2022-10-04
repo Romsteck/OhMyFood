@@ -54,7 +54,7 @@ $Color_Green:   #99E2D0;
         border: 4px solid transparent;
         border-top-color: blueviolet;
         border-radius: 50%;
-        animation: spinnerOne 2s;
+        animation: spinnerOne 2s forwards;
     }
 
     div:nth-child(2) {
