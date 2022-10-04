@@ -76,7 +76,7 @@ td, th {
   height: 100%;
   background-color: rgba(255, 255, 255, 0.8);
   z-index: 20;
-  animation: spinnerContainer 2s ease-out forwards;
+  animation: spinnerContainer 2s cubic-bezier(0.11, 0.9, 0.23, 0.9) forwards;
 }
 
 .spinner {
@@ -94,7 +94,7 @@ td, th {
   border: 4px solid transparent;
   border-top-color: blueviolet;
   border-radius: 50%;
-  animation: spinnerOne 2s cubic-bezier(0.39, 0.79, 0.81, 0.96);
+  animation: spinnerOne 2s;
 }
 .spinner div:nth-child(2) {
   border: 4px solid transparent;
@@ -102,11 +102,12 @@ td, th {
 }
 
 @keyframes spinnerContainer {
-  75% {
+  50% {
     opacity: 1;
   }
   100% {
     opacity: 0;
+    visibility: hidden;
   }
 }
 @keyframes spinnerOne {
@@ -330,6 +331,9 @@ header img {
 }
 #Restaurants .RestaurantCard .RestaurantDescription .Heart--Container:hover .Gradient--Heart {
   opacity: 1;
+}
+#Restaurants .RestaurantCard .RestaurantDescription .RestaurantDescriptionText {
+  color: black;
 }
 #Restaurants .RestaurantCard .RestaurantDescription .RestaurantDescriptionText h2 {
   font-family: "Roboto_Bold";
