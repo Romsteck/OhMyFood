@@ -1,13 +1,7 @@
-/* Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-a:link{
-    text-decoration: none!important;
-}
-@import "reset.scss";
+@use "reset.scss" as *;
+@use "variables.scss" as *;
+@use "mixins.scss" as *;
+
 @font-face {
     font-family: "Roboto_Light";
     src: url("../fonts/Roboto/Roboto-Light.ttf")
@@ -24,10 +18,6 @@ a:link{
     font-family: "Shrikhand";
     src: url("../fonts/Shrikhand/Shrikhand-Regular.ttf")
 }
-
-$Color_Purple:  #9356DC;
-$Color_Pink:    #FF79DA;
-$Color_Green:   #99E2D0;
 
 
 // LOADING SPINNER
@@ -123,15 +113,7 @@ header {
 
 // STANDARD BUTTON DEFINITIONS
 .btn {
-    background: linear-gradient(0deg, rgba(147,86,220,1) 0%, rgba(255,121,218,1) 100%);
-    border-radius: 25px;
-    color:white;
-    font-family: Roboto_Regular;
-    font-size: 15px;
-    box-shadow: 0px 2px 5px 1px silver;
-    position: relative;
-    padding-top:16px;
-
+    @extend .defaultButton;
 
     &:hover {
         &::after {
@@ -144,7 +126,7 @@ header {
     &::after {
         width: 100%;
         height: 100%;
-        @extend .btn;
+        @extend .defaultButton;
         content: "Explorer nos restaurants";
         display: block;
         position: absolute;
@@ -346,43 +328,47 @@ header {
 }
 
 // FOOTER
-footer ul {
-    background-color: rgba(0,0,0,0.8);
-    color: white;
-    display: flex;
-    flex-direction: column;
-    padding: 25px;
-    font-family: "Roboto_Regular";
-    font-size: 13px;
 
-    a:visited {
-        color: white;
-    }
+footer {
 
-    img {
-        width: 100px;
-        margin-bottom: 15px;
-    }
-    .FooterItem {
+    ul {
+        background-color: rgba(0,0,0,0.8);
         color: white;
-        font-family: Roboto_Light;
-        margin-bottom: 10px;
-    }
-    .FooterItemWithIcon {
-        font-weight: 600;
         display: flex;
-        flex-direction: row;
-        margin-bottom: 5px;
+        flex-direction: column;
+        padding: 25px;
+        font-family: "Roboto_Regular";
+        font-size: 13px;
+        
 
-        i {
-            margin-right: 5px;
-            margin-top: 1px;
-            width: 20px;
-            height: 20px;
+        a:visited {
+            color: white;
+        }
+
+        img {
+            width: 100px;
+            margin-bottom: 15px;
+        }
+        .FooterItem {
+            color: white;
+            font-family: Roboto_Light;
+            margin-bottom: 10px;
+        }
+        .FooterItemWithIcon {
+            font-weight: 600;
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 5px;
+
+            i {
+                margin-right: 5px;
+                margin-top: 1px;
+                width: 20px;
+                height: 20px;
+            }
         }
     }
 }
-
 
 // MEDIA QUERIES
 @media screen and (min-width : 770px) {
@@ -449,4 +435,12 @@ footer ul {
             width: 50%;
         }
     }
+}
+
+@media screen and (min-width: 1210px) {
+    footer {
+        position: absolute;
+        width: 100%;
+        bottom: 0px;
+    }    
 }

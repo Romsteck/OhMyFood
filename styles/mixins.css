@@ -1,0 +1,12 @@
+.defaultButton {
+  background: linear-gradient(0deg, rgb(147, 86, 220) 0%, rgb(255, 121, 218) 100%);
+  border-radius: 25px;
+  color: white;
+  font-family: Roboto_Regular;
+  font-size: 15px;
+  box-shadow: 0px 2px 5px 1px silver;
+  position: relative;
+  padding-top: 16px;
+}
+
+/*# sourceMappingURL=mixins.css.map */
