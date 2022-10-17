@@ -464,7 +464,7 @@ footer ul .FooterItemWithIcon i {
     width: 50%;
   }
 }
-@media screen and (min-width: 1210px) {
+@media screen and (min-width: 1600px) {
   footer {
     position: absolute;
     width: 100%;
